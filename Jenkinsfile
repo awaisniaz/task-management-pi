@@ -9,7 +9,6 @@ pipeline {
                 }
             }
         }
-
         stage('Run the App') {
             steps {
                 script {
@@ -18,7 +17,6 @@ pipeline {
                 }
             }
         }
-
         stage('Visit /health route') {
             steps {
                 script {
