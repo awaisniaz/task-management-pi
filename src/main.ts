@@ -28,6 +28,6 @@ async function bootstrap() {
     SwaggerModule.setup('swagger', app, document, {
       swaggerOptions: { defaultModelsExpandDepth: -1 },
     });
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 5000);
 }
 bootstrap();

@@ -4,9 +4,21 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
 import { LoggerMiddleware } from './logger/logger.middleware';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [UsersModule, TasksModule],
+  imports: [UsersModule, TasksModule,
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'password',
+      database: 'task-Management-api',
+      autoLoadEntities: true,
+      synchronize: true, // Disable in production
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
