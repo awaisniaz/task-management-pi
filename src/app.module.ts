@@ -16,7 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'password',
       database: 'task-Management-api',
       autoLoadEntities: true,
-      synchronize: true, // Disable in production
+      synchronize: false, // Disable in production
     }),
   ],
   controllers: [AppController],
