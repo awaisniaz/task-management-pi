@@ -1,0 +1,31 @@
+From eaf11e487a9e5a9d2d9b4fc323fe6bc830dd326e Mon Sep 17 00:00:00 2001
+From: awaisniaz <awaisniaz1995@gmail.com>
+Date: Sat, 8 Feb 2025 18:21:07 +0500
+Subject: [PATCH] fix: remov synchonization
+
+---
+ src/app.module.ts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/app.module.ts b/src/app.module.ts
+index 8b2e0a2..7073ea4 100644
+--- a/src/app.module.ts
++++ b/src/app.module.ts
+@@ -1,4 +1,4 @@
+-import { MiddlewareConsumer, Module, NestMiddleware, NestModule } from '@nestjs/common';
++import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+ import { AppController } from './app.controller';
+ import { AppService } from './app.service';
+ import { UsersModule } from './users/users.module';
+@@ -14,7 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
+       port: 5432,
+       username: 'postgres',
+       password: 'password',
+-      database: 'task-Management-api',
++      database: 'task-management-api',
+       autoLoadEntities: true,
+       synchronize: false, // Disable in production
+     }),
+-- 
+2.47.1.windows.1
+
